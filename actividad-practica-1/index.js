@@ -14,6 +14,9 @@ const product1 = {
   code: "AO1"
 }
 
+const descriptionProduct1 = product1.description
+console.log({descriptionProduct1})
+
 const product2 = {
   title: "El Principito",
   description: "Libro de Saint Perez",
@@ -28,6 +31,6 @@ manager.addProduct(product2)
 
 // console.log(manager.getProducts());
 
-console.log(manager.getProductById(2))
-console.log(manager.getProductById("asdf"));
+// console.log(manager.getProductById(2))
+// console.log(manager.getProductById("asdf"));
 
