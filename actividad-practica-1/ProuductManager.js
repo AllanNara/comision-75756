@@ -1,40 +1,40 @@
 class ProductManager {
+  #products;
   constructor() {
-    this.products = [];
+    this.#products = [];
   }
 
-  addProduct(product) {
-    let productByCode = this.products.some((p) => p.code === product.code);
+  addProduct({ title, description, price, thumbnail, code, stock }) {
+    let productByCode = this.#products.some((p) => p.code === code);
 
     if (productByCode) {
       console.log("El producto ya existe");
-
       return;
     }
 
     let newProduct = {
-      id: this.products[this.products.length - 1]?.id + 1 || 1,
-      title: product.title,
-      description: product.description,
-      price: product.price,
-      thumbnail: product.thumbnail,
-      code: product.code,
-      stock: product.stock,
+      id: this.#products[this.#products.length - 1]?.id + 1 || 1,
+      title,
+      description,
+      price,
+      thumbnail,
+      code,
+      stock,
     };
 
-    this.products.push(newProduct);
+    this.#products.push(newProduct);
   }
 
   getProducts() {
-    return this.products
+    return this.#products
   }
 
   getProductById(id) {
     let productFound;
 
-    for (let i = 0; i < this.products.length; i++) {
-      if(this.products[i].id === id) {
-        productFound = this.products[i]
+    for (let i = 0; i < this.#products.length; i++) {
+      if(this.#products[i].id === id) {
+        productFound = this.#products[i]
       } 
     }
 
