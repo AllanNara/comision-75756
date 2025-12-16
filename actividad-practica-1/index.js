@@ -1,41 +1,54 @@
-const ProductManger = require("./ProuductManager.js");
+import ProductManager from "./ProductManager.js";
 
-const manager = new ProductManger();
-
-// console.log(manager);
-// console.log(manager.getProducts());
-
-const product1 = {
-  title: "Rayuela",
-  description: "Libro de Cortazar",
-  stock: 15,
-  price: 2.44,
-  thumbnail: "NOT_FOUND",
-  code: "AO1",
-};
-
-const { description: description1 } = product1;
-
-// console.log({ description1 });
-
-const product2 = {
-  title: "El Principito",
-  description: "Libro de Saint Perez",
-  stock: 500,
-  price: 1.4,
-  thumbnail: "NOT_FOUND",
-  code: "AO2",
-};
-
-const { description: description2 } = product2;
-// console.log({ description2 });
-
-manager.addProduct(product1);
-manager.addProduct(product2);
-
-console.log(manager.getProducts());
-
-// console.log(manager.getProductById(2))
-// console.log(manager.getProductById("asdf"));
+const manager = new ProductManager();
 
 
+manager.addProduct({
+  title: "Cronicas de una muerte anunciada",
+  price: 13.3,
+  code: "00A1",
+  stock: 22,
+  thumbnail: "IMG_NOT_FOUND"
+})
+
+manager.addProduct({
+  title: "Cronicas de una muerte anunciada",
+  description: "Libro de Gabriel Garcia Marquez",
+  price: 13.3,
+  code: "00A1",
+  stock: 22,
+  thumbnail: "IMG_NOT_FOUND"
+})
+
+manager.addProduct({
+  title: "Cronicas de una muerte anunciada",
+  description: "Libro de Gabriel Garcia Marquez",
+  price: 13.3,
+  code: "00A1",
+  stock: 22,
+  thumbnail: "IMG_NOT_FOUND"
+})
+
+manager.addProduct({
+  title: "Dracula",
+  description: "Libro de Bream Stoker",
+  price: 20,
+  code: "00A2",
+  stock: 23,
+  thumbnail: "IMG_NOT_FOUND"
+})
+
+manager.addProduct({
+  title: "El Resplandor",
+  description: "Libro de Stephen King",
+  price: 11,
+  code: "00A3",
+  stock: 1,
+  thumbnail: "IMG_NOT_FOUND"
+})
+
+console.log("todo")
+console.log(manager.getProducts())
+
+console.log("por id")
+console.log(manager.getProductById(2))
