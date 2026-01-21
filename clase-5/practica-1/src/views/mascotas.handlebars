@@ -1,0 +1,18 @@
+    <h2>Mascotas</h2>
+
+{{#if pets.length}}
+    {{#each pets}}
+        <p><strong>Nombre:</strong> {{this.nombre}}</p>
+        <p><strong>Edad:</strong> {{this.edad}}</p>
+        <p><strong>Raza:</strong> {{this.raza}}</p>
+   
+        {{#if this.adoptado}}
+         <p><strong>Estado de adopción:</strong> ADOPTADO</p>
+        {{else}}
+         <p><strong>Estado de adopción:</strong> Disponible</p>
+        {{/if}}
+        <hr>
+    {{/each}}
+{{else}}
+    <h2>No hay mascotas disponibles</h2>
+{{/if}}

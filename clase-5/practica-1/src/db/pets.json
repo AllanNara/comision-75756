@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "Pancracio",
+    "raza": "Bulldog",
+    "edad": 5,
+    "adoptado": true
+  },
+  {
+    "nombre": "Nena",
+    "raza": "Labrador",
+    "edad": 3,
+    "adoptado": false
+  },
+  {
+    "nombre": "Teo",
+    "raza": "Beagle",
+    "edad": 2,
+    "adoptado": true
+  },
+  {
+    "nombre": "Zeus",
+    "raza": "Pastor Alemán",
+    "edad": 4,
+    "adoptado": false
+  },
+  {
+    "nombre": "Luli",
+    "raza": "Labrador",
+    "edad": "2",
+    "adoptado": false
+  }
+]
