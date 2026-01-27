@@ -14,7 +14,18 @@ app.set("view engine", "handlebars")
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-app.use(express.static(import.meta.dirname + "/public"))
+app.use("/", express.static(import.meta.dirname + "/public"))
 
 app.use(viewsRouter)
+
+const messages = [];
+io.on("connection", (socket) => {
+  console.log("Usuario conectado con id: " + socket.id)
+  
+  socket.on("login", (username) => {
+    socket.broadcast.emit("new-user", username)
+  })
+
+  socket.emit("all-msgs", messages)
+})
 
