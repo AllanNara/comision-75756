@@ -2,6 +2,7 @@ import express from "express";
 import hbs from "express-handlebars";
 import { Server } from "socket.io";
 import viewsRouter from "./routes/views.router.js"
+import websocket from "./websocket.js"
 
 const PORT = 8080;
 const app = express();
@@ -18,14 +19,4 @@ app.use("/", express.static(import.meta.dirname + "/public"))
 
 app.use(viewsRouter)
 
-const messages = [];
-io.on("connection", (socket) => {
-  console.log("Usuario conectado con id: " + socket.id)
-  
-  socket.on("login", (username) => {
-    socket.broadcast.emit("new-user", username)
-  })
-
-  socket.emit("all-msgs", messages)
-})
-
+websocket(io)

@@ -15,8 +15,20 @@ socket.on("all-msgs", (msgs) => {
     box.innerHTML = "<p>No hay mensajes... ¡Se el primero!</p>"
   } else {
     const newMessagesHtml = msgs.reduce((acc, msg) => {
-      return acc + `<p><strong>${msg.username}</strong> dice: ${msg.message}</p></br>` 
+      return acc + `<p><strong>${msg.username}</strong> dice: ${msg.message}</p>` 
     }, "")
     box.innerHTML = newMessagesHtml
+  }
+})
+
+const inputMsg = document.querySelector("#input-msg")
+
+inputMsg.addEventListener("keypress", (e) => {
+  const message = inputMsg.value.trim()
+  if(e.key === "Enter" && message) {
+    e.preventDefault();
+    const objectMessage = { username, message }
+    socket.emit("new-message", objectMessage)
+    inputMsg.value = ""
   }
 })
